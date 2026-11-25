@@ -1,0 +1,36 @@
+{
+  "$schema_version": 1,
+  "name": "srs-ag13-architecture-design",
+  "version": "1.0.0",
+  "node_id": "AG-13",
+  "kind": "agent",
+  "summary": "Agent Node AG-13 (pha Thiết kế SOP): thiết kế kiến trúc phần mềm (SAD, TL-06) từ mô hình nghiệp vụ AG-06 + NFR AG-11 — thành phần, phân tầng, tích hợp, deployment, quyết định kiến trúc (ADR), truy vết UC/NFR.",
+  "repository": "https://github.com/HaNguyen1409/srs-ag13-architecture-design",
+  "license": "MIT",
+  "interface": {
+    "contract": "SKILL.md — đầu vào/đầu ra là tài liệu Markdown/JSON mô tả trong skill; không gọi trực tiếp skill khác",
+    "output_artifact": null,
+    "sop_steps": [
+      {
+        "step": "26",
+        "title": "Thiết kế kiến trúc (SAD, TL-06) — chốt phong cách API + cơ chế auth",
+        "type": "Agent",
+        "receives_from": "B18, B19, B9",
+        "sends_to": "B27, B28, B29"
+      }
+    ]
+  },
+  "upstream": {
+    "srs-ag10-functional-spec": "^1.0.0",
+    "srs-ag14-data-design": "^1.0.0",
+    "srs-ag11-nfr-spec": "^1.0.0",
+    "srs-ag06-business-model": "^1.4.2"
+  },
+  "downstream": [
+    "srs-ag14-data-design",
+    "srs-ag15-api-interface-design",
+    "srs-ag16-security-design"
+  ],
+  "orchestrates": {},
+  "runtime": null
+}
